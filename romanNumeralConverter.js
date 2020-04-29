@@ -1,4 +1,6 @@
-//JavaScript Algorithms and Data Structures Projects: Roman Numeral Converter**************
+//Roman Numeral Converter 
+//(I came up with a solution that uses subtraction to test what letters are needed, this resulted in a lot of 
+//if else statements but I got the result I wanted)
 function convertToRoman(num) {
   let newNum = num
   let numbers = [1, 2, 3, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
