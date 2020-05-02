@@ -30,12 +30,12 @@ function checkCashRegister(price, cash, cid) {
           extra -= answer[i][0]
           cid[i][1] -= answer[i][0]
 		  //checks for insufficient funds, intentionally added before checking for closed due to what if looks for
-          if(cid[0][1] + cid[1][1] + cid[2][1] == 0 & extra > 0){
+          if(cid[0][1]== 0 & extra > 0){
         return {status: "INSUFFICIENT_FUNDS", change: []}
         break;
         }
 		//checks for closed, if closed I calculated the change within this block and format it as necessary
-          if (cid[0][1] + cid[1][1] + cid[2][1] + cid[3][1] + cid[4][1] <= 0){
+          if (cid[0][1] <= 0){
             answer = answer.filter(curr => curr[2] > 0)
             for (let i = 0; i < answer.length; i++){
                 answer[i].splice(0,1)
