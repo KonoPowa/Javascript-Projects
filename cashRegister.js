@@ -1,6 +1,5 @@
 /****************************************************** CASH REGISTER ****************************************************/
-	/* I think I could've made this simpler, but I came up with ideas as I wrote the code so I ended up with
-		a lot of nested if statements and for loops that are probably unneccessary. However, the code works as expected.*/
+	/* Returns open with change, closed with change, or insufficient funds */
 		
 function checkCashRegister(price, cash, cid) {
   function round(value, precision) {
@@ -29,7 +28,7 @@ function checkCashRegister(price, cash, cid) {
           answer[i][2] += answer[i][0]
           extra -= answer[i][0]
           cid[i][1] -= answer[i][0]
-		  //checks for insufficient funds, intentionally added before checking for closed due to what if looks for
+		  //checks for insufficient funds, intentionally added before checking for closed due to what it looks for
           if(cid[0][1]== 0 & extra > 0){
         return {status: "INSUFFICIENT_FUNDS", change: []}
         break;
